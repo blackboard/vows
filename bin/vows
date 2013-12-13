@@ -126,6 +126,9 @@ while (arg = argv.shift()) {
                 case 'xunit':
                     _reporter = require('../lib/vows/reporters/xunit');
                     break;
+                case 'custom-reporter':
+                    _reporter = require(path.join(process.cwd(), argv.shift()));
+                    break;
                 case 'cover-plain':
                     options.coverage = true;
                     _coverage = require('../lib/vows/coverage/report-plain');
